@@ -36,12 +36,14 @@ string palindromeCheck(long num)
 {
     string result;
     int j = 0;
+    int k = 0;
     string mutable = Convert.ToString(num);
+    if (mutable.Length % 2 != 0) k = 1;
     for (int i = 0; i < mutable.Length / 2; i++)
     {
         if (mutable[i] == mutable[mutable.Length - i - 1]) j++;
     }
-    if (j * 2 + 1 == mutable.Length) result = "Число палиндром";
+    if (j * 2 + k == mutable.Length) result = "Число палиндром";
     else result = "Число не палиндром";
     return result;
 }
